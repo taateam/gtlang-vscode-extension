@@ -1,0 +1,14 @@
+{
+    "name": "GTLang Pink Theme",
+    "type": "dark",
+    "colors": {},
+    "tokenColors": [
+      {
+        "scope": "keyword.operator.gtlang",
+        "settings": {
+          "foreground": "#ffcccc",
+        }
+      }
+    ]
+}
+  

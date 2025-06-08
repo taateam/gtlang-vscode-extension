@@ -13,23 +13,34 @@
     },
     {
       "name": "variable.other.gtlang",
-      "match": "\\$[\\p{L}_][\\p{L}0-9_]*"
+      "match": "(?<!\\\\)\\$[\\p{L}_][\\p{L}0-9_]*"
     },
     {
       "name": "variable.other.global.gtlang",
-      "match": "\\$\\$[\\p{L}_][\\p{L}0-9_]*"
+      "match": "(?<!\\\\)\\$\\$[\\p{L}_][\\p{L}0-9_]*"
     },
     {
       "name": "entity.name.function.gtlang",
-      "match": "\\@[a-zA-Z0-9_-]+"
+      "match": "(?<!\\\\)\\@[a-zA-Z0-9_-]+"
     },
     {
       "name": "constant.numeric.gtc",
-      "match": "\\b\\d+(\\.\\d+)?\\b"
+      "match": "(?<!\\\\)\\b\\d+(\\.\\d+)?\\b"
     },
     {
       "name": "comment.line.double-slash.gtlang",
       "begin": "//",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.comment.gtlang"
+        }
+      },
+      "end": "$",
+      "patterns": []
+    },
+    {
+      "name": "comment.line.sharp.gtlang",
+      "begin": "#",
       "beginCaptures": {
         "0": {
           "name": "punctuation.definition.comment.gtlang"
@@ -55,8 +66,8 @@
       "patterns": []
     },
     {
-      "name": "keyword.operator.gtlang",
-      "match": "(\\+\\+|--|===|!==|==|!=|>=|<=|\\+:|\\-:|\\*:|/:|%:|::|\\.\\.|\\->|=>|<<|>>|\\|\\||&&|\\|&|<>|\\*\\*|\\.:|\\[\\]|=|>|<|\\+|-|\\*|/|%|!|\\?|:|\\.|,|\\(|\\)|\\{|\\}|\\[|\\])"
+      "name": "keyword.operator.gtc",
+      "match": "(?<!\\\\)!==|::|==|==|>=|<=|!=|\\+:|\\+\\+|\\-:|\\-\\-|\\.:|\\[\\]|\\*:|\\/:|%:|<>|=>|\\->|>>|<<|\\.\\.|&&|\\|\\||\\|&|\\*\\*|:|=|>|<|\\.|,|:|\\+|!|\\-|\\*|\\/|%|\\?|\\(|\\)|\\{|\\}|\\[|\\]"
     },
     {
       "name": "string.quoted.double.gtlang",
@@ -92,11 +103,11 @@
     },
     {
       "name": "variable.special.gtc",
-      "match": "\\$\\?"
+      "match": "(?<!\\\\)\\$\\?"
     },
     {
       "name": "entity.name.class.gtc",
-      "match": "\\^[\\p{L}_][\\p{L}0-9_]*"
+      "match": "(?<!\\\\)\\^[\\p{L}_][\\p{L}0-9_]*"
     },
     {
       "name": "string.unquoted.gtc",
