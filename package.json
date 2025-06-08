@@ -1,6 +1,6 @@
 {
   "name": "gtlang",
-  "publisher": "TAA Team",
+  "publisher": "TAATeam",
   "displayName": "Green Tea Programming Language extension",
   "description": "Syntax highlighting, Run button for GTLang (https://gtlang.com)",
   "version": "0.0.1",
@@ -32,14 +32,13 @@
         "language": "gtlang",
         "scopeName": "source.gtlang",
         "path": "./syntaxes/gtc.tmLanguage.json"
-      },
+      }
+    ],
+    "themes": [
       {
-        "name": "Operators",
-        "scope": "keyword.operator.gtlang",
-        "settings": {
-          "foreground": "#ffc0cb",
-          "fontStyle": "bold"
-        }
+        "label": "GTLang Pink Theme",
+        "uiTheme": "vs-dark",
+        "path": "./themes/gtlang-color-theme.json"
       }
     ],
     "commands": [
