@@ -1,0 +1,74 @@
+{
+  "name": "gtlang",
+  "publisher": "TAA Team",
+  "displayName": "Green Tea Programming Language extension",
+  "description": "Syntax highlighting, Run button for GTLang (https://gtlang.com)",
+  "version": "0.0.1",
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "main": "./extension.js",
+  "activationEvents": [
+    "onCommand:gtlang.runFile",
+    "onLanguage:gtlang"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "gtlang",
+        "aliases": [
+          "GTLang",
+          "gtlang"
+        ],
+        "extensions": [
+          ".gtc"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "gtlang",
+        "scopeName": "source.gtlang",
+        "path": "./syntaxes/gtc.tmLanguage.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "gtlang.runFile",
+        "title": "Run GTLang File"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "gtlang.runFile",
+          "when": "resourceExtname == .gtc",
+          "group": "navigation"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "gtlang.runFile",
+          "when": "resourceExtname == .gtc",
+          "group": "navigation"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "gtlang.runFile",
+          "when": "resourceExtname == .gtc"
+        }
+      ]
+    }
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.60.0",
+    "vscode": "^1.1.37"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/taateam/gtlang-vscode-extension.git"
+  }
+}

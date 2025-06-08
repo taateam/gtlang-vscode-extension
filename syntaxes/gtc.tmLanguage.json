@@ -1,0 +1,108 @@
+{
+  "scopeName": "source.gtlang",
+  "name": "GTLang",
+  "fileTypes": [
+    "gtc"
+  ],
+  "$schema": "https://raw.githubusercontent.com/microsoft/vscode-textmate/master/test-cases/schema.json",
+  "unicode": true,
+  "patterns": [
+    {
+      "name": "keyword.control.gtc",
+      "match": "(?<!\\\\)\\b(if|else|class|do|while|break|use|switch|new|continue|return|include|throw|try|catch|finally|defcat|deffin|elif|case|for|times|from|to|foreach|as|at|borrow|from)\\b"
+    },
+    {
+      "name": "variable.other.gtlang",
+      "match": "\\$[\\p{L}_][\\p{L}0-9_]*"
+    },
+    {
+      "name": "variable.other.global.gtlang",
+      "match": "\\$\\$[\\p{L}_][\\p{L}0-9_]*"
+    },
+    {
+      "name": "entity.name.function.gtlang",
+      "match": "\\@[a-zA-Z0-9_-]+"
+    },
+    {
+      "name": "constant.numeric.gtc",
+      "match": "\\b\\d+(\\.\\d+)?\\b"
+    },
+    {
+      "name": "comment.line.double-slash.gtlang",
+      "begin": "//",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.comment.gtlang"
+        }
+      },
+      "end": "$",
+      "patterns": []
+    },
+    {
+      "name": "comment.block.gtlang",
+      "begin": "/\\*",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.comment.begin.gtlang"
+        }
+      },
+      "end": "\\*/",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.comment.end.gtlang"
+        }
+      },
+      "patterns": []
+    },
+    {
+      "name": "keyword.operator.gtlang",
+      "match": "(\\+\\+|--|===|!==|==|!=|>=|<=|\\+:|\\-:|\\*:|/:|%:|::|\\.\\.|\\->|=>|<<|>>|\\|\\||&&|\\|&|<>|\\*\\*|\\.:|\\[\\]|=|>|<|\\+|-|\\*|/|%|!|\\?|:|\\.|,|\\(|\\)|\\{|\\}|\\[|\\])"
+    },
+    {
+      "name": "string.quoted.double.gtlang",
+      "begin": "\"",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.begin.gtlang"
+        }
+      },
+      "end": "\"",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.end.gtlang"
+        }
+      },
+      "patterns": [
+        {
+          "name": "constant.character.escape.gtlang",
+          "match": "\\\\."
+        }
+      ]
+    },
+    {
+      "name": "string.quoted.single.gtc",
+      "begin": "'",
+      "end": "'",
+      "patterns": [
+        {
+          "name": "constant.character.escape.gtc",
+          "match": "\\\\."
+        }
+      ]
+    },
+    {
+      "name": "variable.special.gtc",
+      "match": "\\$\\?"
+    },
+    {
+      "name": "entity.name.class.gtc",
+      "match": "\\^[\\p{L}_][\\p{L}0-9_]*"
+    },
+    {
+      "name": "string.unquoted.gtc",
+      "match": "\\b[\\p{L}_][\\p{L}0-9_]*\\b"
+    }
+  ],
+  "repository": {},
+  "uuid": "e1b2f2b6-65af-4d1b-b1a6-9e9b4252397f"
+}
